@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\unittest\unittest.csproj" />
   </ItemGroup>
 
 </Project>

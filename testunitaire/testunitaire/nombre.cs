@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 
 
-
-int DeuxiemeGrandNombre(List<int> List)
+public class TuDoisMettreTesFonctionDansUneClass
 {
-    if (List == null)
+    public static int DeuxiemeGrandNombre(List<int> List)
     {
-        throw new NullReferenceException("la liste ne doit pas etre null");
+        if (List == null)
+        {
+            throw new NullReferenceException("la liste ne doit pas etre null");
+        }
+        if (List.Count < 2)
+        {
+            throw new ArgumentOutOfRangeException("la longueur de la liste doit etre superieur a 2");
+        }
+        List.Sort();
+        return List[1];
     }
-    if (List.Count < 2)
-    {
-        throw new ArgumentOutOfRangeException("la longueur de la liste doit etre superieur a 2");
-    }
-    List.Sort();
-    return List[1];
+
 }
 
 
