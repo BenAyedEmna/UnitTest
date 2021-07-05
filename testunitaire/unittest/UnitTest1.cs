@@ -17,6 +17,16 @@ namespace unittest
         }
 
         [TestMethod]
+        public void DeuxiemeGrandNombre_Length1_ArgumentOutOfRangeException()
+        {
+            //Arrange
+            List<int> ListTest = new List<int>();
+
+            //Assert and Act 
+            Assert.ThrowsException<System.ArgumentOutOfRangeException>(() => TuDoisMettreTesFonctionDansUneClass.DeuxiemeGrandNombre(ListTest));
+        }
+
+        [TestMethod]
         public void DeuxiemeGrandNombre_LengthLessThan2_ArgumentOutOfRangeException()
         {
             //Arrange
@@ -37,15 +47,49 @@ namespace unittest
             ListTest.Add(11);
 
             //act
-            int Max2;
+            int NbrMax1,Max2;
+            NbrMax1 = 0; 
             Max2 = TuDoisMettreTesFonctionDansUneClass.DeuxiemeGrandNombre(ListTest);
-
-
+            foreach(int e in ListTest)
+            {
+                if (e > Max2)
+                    NbrMax1++; 
+            }
             //Assert
-            Assert.AreEqual(Max2, ListTest[1]);
+            Assert.AreEqual(NbrMax1,1);
+
+        }
+
+        [TestMethod]
+        public void DeuxiemeGrandNombre_LengthMillion_ReturnTheNumber()
+        {
+            //Arrange 
+            List<int> ListTest = new List<int>();
+            int i;
+            var rand = new Random();
+            for (i = 0; i < 1000000; i++)
+            {
+                ListTest.Add(rand.Next());
+            }
+
+            //act
+            int NbrMax1, Max2;
+            NbrMax1 = 0;
+            Max2 = TuDoisMettreTesFonctionDansUneClass.DeuxiemeGrandNombre(ListTest);
+            foreach (int e in ListTest)
+            {
+                if (e > Max2)
+                    NbrMax1++;
+            }
+            //Assert
+            Assert.AreEqual(NbrMax1, 1);
 
         }
     }
+
+    
+
+
 
 
 }
