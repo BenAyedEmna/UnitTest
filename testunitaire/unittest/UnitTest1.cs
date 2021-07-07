@@ -47,17 +47,10 @@ namespace unittest
             ListTest.Add(11);
 
             //act
-            int NbrMax1,Max2;
-            NbrMax1 = 0; 
+            int Max2;
             Max2 = TuDoisMettreTesFonctionDansUneClass.DeuxiemeGrandNombre(ListTest);
-            foreach(int e in ListTest)
-            {
-                if (e > Max2)
-                    NbrMax1++; 
-            }
             //Assert
-            Assert.AreEqual(NbrMax1,1);
-
+            Assert.AreEqual(Max2,22);
         }
 
         [TestMethod]
